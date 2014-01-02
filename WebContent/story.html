@@ -1,0 +1,61 @@
+<!-- NAVIGATION -->
+<div class="row">
+    <nav class="navbar navbar-default navbar-fixed-top ">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+
+            </button>
+            <a href="./" class="navbar-brand">OpenReddit</a>
+        </div>
+        <div class="collapse navbar-collapse" id="collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#/new_story">Add Story!</a></li>
+                <li><a href="#/top">Top</a></li>
+                <li><a href="#/new">New</a></li>
+                <li><a href="#/subreddits">Subreddits</a></li>
+                <li><a href="#/logout">Logout</a></li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search" ng-model="keyword">
+                </div>
+                <a  class="btn btn-default" href="#/search/{{keyword}}"><span class="glyphicon glyphicon-search"></span></a>
+            </form>
+
+        </div>
+    </nav>
+</div>
+<!-- END NAVIGATION -->
+
+<!-- CONTENT -->
+<div class="viewWithNavigation">
+
+    
+<!-- MAIN ROW -->
+<div class="row">
+	<div class="col-xs-2 col-sm-1">
+		<a href="" ng-click="upvote(story)"> <span class="glyphicon glyphicon-chevron-up" ></span></a>
+      <h3> {{ story._votes }}</h3>
+      <a href="" ng-click="downvote(story)"><span class="glyphicon glyphicon-chevron-down"></span></a>
+
+	</div>
+	<div class="col-xs-10 col-sm-11">
+		<h1>{{ story._title }}</h1>		
+		<p>
+			{{ story._text }}
+
+		</p>
+
+	</div>
+
+
+
+</div>
+
+	
+</div>
+

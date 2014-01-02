@@ -1,0 +1,61 @@
+
+<!-- NAVIGATION -->
+<div class="row">
+    <nav class="navbar navbar-default navbar-fixed-top ">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+
+            </button>
+            <a href="./" class="navbar-brand">OpenReddit</a>
+        </div>
+        <div class="collapse navbar-collapse" id="collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#/new_story">Add Story!</a></li>
+                <li><a href="#/top">Top</a></li>
+                <li><a href="#/new">New</a></li>
+                <li><a href="#/subreddits">Subreddits</a></li>
+                <li><a href="#/logout">Logout</a></li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search" ng-model="keyword">
+                </div>
+                <a  class="btn btn-default" href="#/search/{{keyword}}"><span class="glyphicon glyphicon-search"></span></a>
+            </form>
+
+        </div>
+    </nav>
+</div>
+<!-- END NAVIGATION -->
+
+<table class="table">
+
+
+
+	<h1>Add New Story</h1> <br>
+	<tr>
+		<td>Title</td>
+		<td><input type="text" style="width: 100%" ng-model="newStory._title"> </td>
+		
+	</tr>
+	<tr>
+		<td>Story</td>
+		<td><textarea type="textarea" style="width: 100%" ng-model="newStory._text"></textarea> </td>
+	</tr>
+	<tr>
+		<td>Subreddit</td>
+		<td>
+			<select class="form-control" ng-model="newStory._subreddit">
+                <option value="{{ subreddit._subredditID }}" ng-repeat="subreddit in subreddits"> {{subreddit._name}} </option>
+
+			</select>
+		</td>
+	</tr>
+</table>
+<button ng-click="addNewStory(newStory)">
+	Publish!
+</button>
